@@ -1,18 +1,14 @@
-# Disaster Management System
+# Courier Management System
 
 ## Project Outline
 
-![disastermanagementsystemplan](https://user-images.githubusercontent.com/90335449/221767228-42ea2107-db39-4f81-a17e-261d3f939342.jpg)
-
-## Technololgies to be used during the project
+## Technololgies used in the project
 
 1. ReactJs.
 2. Tailwind CSS.
-3. APIs (weather API, Relief Web API and or others).
-4. MongoDB for storing database.
-5. NodeJs for Backend(if possible in the duration of the deadline).
-6. ChatGPT API (if possible, for tips and chatbot related stuff, if deadline allows).
-7. Weather Prediction Components to be added if consensus reached.
+3. Firebase(authentication and database)
+4. Media Query
+5. Bootstrap
 
 ## Getting Started with Create React App
 
