@@ -1,0 +1,35 @@
+h1{
+    font-size: 20px;
+    margin-left: -80%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.Titles{
+    margin-right: 85%;
+    font-style: oblique;
+    font-weight: 500;
+}
+.Titles1{
+    margin-right: 89%;
+    font-style: oblique;
+    font-weight: 500;
+}
+.buttonCol{
+    color: blue;
+    margin-right: 50%;
+
+}
+.boxes{
+    max-width: 500px;
+}
+.full{
+    min-width: 1400px;
+    overflow-y: hidden;
+}
+.forms{
+    margin-left: 33%;
+}
+.landing-page__footer{
+    max-width: 140px;
+}
