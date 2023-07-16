@@ -36,6 +36,7 @@ function App() {
         <Route path="/ShipTrack" element={<ShipTrack />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Report" element={<PDFViewer pdfUrl={ReportPDF} />} />
+        <Route path="/PDFViewer" element={<PDFViewer />} />
       </Routes>
     </div>
   );
