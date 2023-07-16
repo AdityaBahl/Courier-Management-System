@@ -33,3 +33,24 @@ h1{
 .landing-page__footer{
     max-width: 140px;
 }
+/* ShipTrack.css */
+.Card {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .Card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .Card p {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+.topic{
+    margin-left: 0%;
+}
+  
