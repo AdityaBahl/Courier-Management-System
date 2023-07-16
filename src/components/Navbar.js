@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import PDFViewer from './PDFViewer';
 //import Logo from '../images/logo1.svg';//black
 import Logo from '../images/logo2.svg';//orange
 import {
@@ -14,14 +13,7 @@ import { auth, db } from "../pages/firebase";
 import { signOut } from "firebase/auth";
 export default function Example() {
     const [openNav, setOpenNav] = useState(false);
-    const [showPDF, setShowPDF] = useState(false);
     const navigate = useNavigate();
-    const pdfURL = '../pages/Report.pdf';
-    const handleReportClick = () => {
-        navigate('/Report');
-        //setShowPDF(true);
-        //window.location.href = "./pages/Report.pdf";
-    }
     const handleLogoutClick = () => {
         signOut(auth);
         navigate("/");
@@ -72,9 +64,9 @@ export default function Example() {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <a href="../pages/Report.pdf" target="_blank" className="flex items-center">
+                <Link to="/PDFViewer" className="flex items-center">
                     Report
-                </a>
+                </Link>
             </Typography>
             <Typography
                 as="li"
@@ -164,7 +156,6 @@ export default function Example() {
                     </Button>
                 </div>
             </MobileNav>
-            {showPDF && <PDFViewer pdfURL={pdfURL} />}
         </Navbar>
     );
 }
