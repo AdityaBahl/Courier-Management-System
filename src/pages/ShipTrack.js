@@ -1,40 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import Card from "../components/card";
+import { ref, onValue } from "firebase/database";
+import { database } from "./firebase";
 import Navbar from '../components/Navbar';
-import courierImage1 from '../images/courier-image-1.jpg';
-//import courierImage2 from '../images/courier-image-2.jpg';
-import Logo from '../images/logo1.svg';
+import '../styles/ShipCreate.css';
 const ShipTrack = () => {
+    const [shipmentData, setShipmentData] = useState([]);
+
+    useEffect(() => {
+        const userDataRef = ref(database, "userDataRecords");
+
+        onValue(userDataRef, (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                const shipmentDataArray = Object.values(data);
+                setShipmentData(shipmentDataArray);
+            }
+        });
+    }, []);
+
     return (
-        <div className="landing-page">
+        <div className="full">
             <Navbar />
-            <div className="landing-page__container">
-                <div className="landing-page__content">
-                    <h1 className="landing-page__title">Welcome to </h1>
-                    <div className="middle">
-                        <img
-                            src={Logo}
-                            width="200"
-                            height="200"
-                            className="d-inline-block align-top"
-                            alt="logo"
-                        >
-                        </img>
-                    </div>
-                    <h1 className="landing-page__title">Courier Management System</h1>
-                    <p className="landing-page__description">
-                        Manage your courier services efficiently with our Courier Management System. From shipment creation to tracking and delivery management, our system provides a comprehensive solution for your logistics needs.
-                    </p>
-                </div>
-                <div className="landing-page__image-container">
-                    <img src={courierImage1} alt="Courier Service" className="landing-page__image" />
-                </div>
-                {/*
-                <div className="landing-page__image-container">
-                    <img src={courierImage2} alt="Courier Service" className="landing-page__image" />
-                </div>
-                */}
+            <h1 className="topic">Shipment Tracking</h1>
+            <div className="Cards">
+                {shipmentData.length > 0 ? (
+                    shipmentData.map((shipment) => (
+                        <Card
+                            key={shipment.trackingNumber}
+                            className="Card"
+                            trackingNumber={shipment.trackingNumber}
+                            recipientName={shipment.recipientName}
+                            recipientAddress={shipment.recipientAddress}
+                            recipientCity={shipment.recipientCity}
+                            recipientState={shipment.recipientState}
+                            recipientZipCode={shipment.recipientZipCode}
+                            weight={shipment.weight}
+                            value={shipment.value}
+                        />
+                    ))
+                ) : (
+                    <p>Loading data...</p>
+                )}
             </div>
+            <br />
+            <footer className="landing-page__footer">
+                <div className="landing-page__footer-container">
+                    <div className="landing-page__footer-contact">
+                        <h3>Contact Us</h3>
+                        <p>Email: adityabahl12345@gmail.com</p>
+                        <p>Phone: +91 7505035476</p>
+                        <p>Made in INDIA</p>
+                        <p>Made With ❤</p>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
-}
+};
+
 export default ShipTrack;
