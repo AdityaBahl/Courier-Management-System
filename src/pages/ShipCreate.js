@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { Form, FormControl, FormLabel, Button } from 'react-bootstrap';
-import { app, auth, provider } from 'firebase/app';
-import firebase from './firebase'
 import "firebase/auth"
 import '../styles/ShipCreate.css';
 
