@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, provider } from './firebase';
 import { useNavigate } from 'react-router-dom';
 import { signInWithPopup } from 'firebase/auth';
+import "../styles/Login.css"
 function Loginpage() {
     const navigate = useNavigate();
     const [values, setValues] = useState({
